@@ -10,7 +10,7 @@ function calculateTax(amount) {
 }
 console.log(calculateTax(0));
 console.log(calculateTax(100));
-console.log(calculateTax(-100));
+console.log(calculateTax(-1000));
 console.log(calculateTax(1000000));
 
 //Function convertToUpperCase//
@@ -51,17 +51,13 @@ console.log(isPalindrome(""));
 console.log(isPalindrome("Not a palindrome"));
 
 //Function calculateDiscountedPrice//
-function calculateDiscountedPrice(calculatedDiscountedPrice, discountPercentage) {
-    if (calculatedDiscountedPrice < 0 || discountPercentage < 0) {
-        return 0;
-    }
-    const discountedPrice = calculatedDiscountedPrice - (calculatedDiscountedPrice * discountPercentage);
-    return discountedPrice;
+function calculateDiscountedPrice(originalPrice, discountPercentage) {
+    return originalPrice * (1 - (discountPercentage / 100));
 }
-console.log(calculateDiscountedPrice(100, 0.1));
-console.log(calculateDiscountedPrice(100, 0.2));
-console.log(calculateDiscountedPrice(100, 0.5));
-console.log(calculateDiscountedPrice(100, 1.0));
+console.log(calculateDiscountedPrice(100, 20));
+console.log(calculateDiscountedPrice(100, 0));
+console.log(calculateDiscountedPrice(100, 100));
+console.log(calculateDiscountedPrice(100, 150));
 
 // This is required for the test to function properly  
 module.exports = { calculateTax, convertToUpperCase, findMaximum, isPalindrome, calculateDiscountedPrice };
